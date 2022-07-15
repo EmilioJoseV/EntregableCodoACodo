@@ -1,4 +1,4 @@
-package ar.com.entregable.service.model.util;
+package ar.com.entregable.webapp.model.sql.util;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.logging.log4j.Logger;
@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class DataBaseConnection {
     //Using Singleton Data Pattern Design
     private static final Logger logger = (Logger) LoggerFactory.getLogger(DataBaseConnection.class);
-    private static String url = "jdbc:mysql://localhost:3306/java_curso?serverTimezone=America/Argentina/Buenos_Aires";
+    private static String url = "jdbc:mysql://localhost:3306/webapp?serverTimezone=America/Argentina/Buenos_Aires";
     private static String username = "root";
     private static String password = "root";
     private static BasicDataSource pool;
