@@ -23,10 +23,9 @@
 
 #### Visualizar paginas una vez levantado el servidor TomCat y desplegado el WAR correctamente:
 http://localhost:7080/app
-
 http://localhost:7080/app/signin
-
 http://localhost:7080/app/signup
-
 http://localhost:7080/app/dashboard
+http://localhost:7080/app/logout
+http://localhost:7080/app/placeOrder
 
