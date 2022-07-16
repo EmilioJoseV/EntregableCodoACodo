@@ -2,7 +2,7 @@
 
 #### Requerimientos para desplegar en local:
 
-1.Java JDK 14 
+1.Java JDK 1.8 (JAVA 8) 
 
 2.Maven 3.3.3 
 
@@ -20,3 +20,15 @@
 5. Si todo se realiza correctamente ingresar a: http://localhost:7080/app/
 6. Se debe mostrarla la aplicacion Web. 
 7. Tener corriendo la base de datos MySQL corriendo en: localhost:3306
+
+#### Visualizar paginas una vez levantado el servidor TomCat y desplegado el WAR correctamente:
+http://localhost:7080/app
+
+http://localhost:7080/app/home.jsp
+
+http://localhost:7080/app/signin
+
+http://localhost:7080/app/signup
+
+http://localhost:7080/app/dashboard
+

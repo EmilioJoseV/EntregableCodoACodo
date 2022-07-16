@@ -2,30 +2,30 @@
     <title>App - Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/loginStyles.css">
+    <link rel="stylesheet" href="../css/signInStyles.css">
 </head>
 
 <body class="text-center">
 <div class="form-signin bg-light">
-    <form>
-        <img class="mb-4" src="https://www.dropbox.com/s/zgbbayj1iqd9fjf/CF_Mark.jpg?raw=1" alt="" width="72">
+    <form action="/app/signIn" method="post">
+        <img class="mb-4" src="../images/android-chrome-512x512.png" alt="company-logo" width="72">
         <h1 class="h3 mb-3 fw-normal">Login</h1>
 
         <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
             <label for="floatingInput">Email</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
             <label for="floatingPassword">Password</label>
         </div>
 
         <div class="checkbox mb-3">
             <label>
-                <input type="checkbox" value="remember-me"> Remember me
+                <input type="checkbox" value="remember-me" name="keepSession"> Remember me
             </label>
         </div>
         <button class="w-100 btn btn-lg btn-dark" type="submit">Sign in</button>

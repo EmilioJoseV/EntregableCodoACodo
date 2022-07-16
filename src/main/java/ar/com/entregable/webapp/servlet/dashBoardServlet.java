@@ -9,12 +9,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "home", urlPatterns = {"/home"})
-public class homeServlet extends HttpServlet {
+@WebServlet(name = "dashboard", urlPatterns = {"/dashboard"})
+public class dashBoardServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html");
-        PrintWriter out = resp.getWriter();
-        out.println("<p>xdxd</p>");
+        //TODO Implement dashboard logic
     }
 }
