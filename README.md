@@ -12,7 +12,7 @@
 
 #### Pasos a seguir para desplegar localmente:
 1. Ejecutar en ruta de proyecto: mvn clean install
-2. Verificar que se realizar un build successfully
+2. Verificar que se realiza un build successfully
 3. Levantar servidor TomCat 10.0.22 atraves de comando: startup.bat (Estar situado en carpeta /bin del tomcat)
 4. Escribir en raiz del proyecto comando: mvn tomcat7:redeploy
    (Considerar configurar como ejecutor en IDE comando: tomcat7:redeploy)
@@ -23,9 +23,15 @@
 
 #### Visualizar paginas una vez levantado el servidor TomCat y desplegado el WAR correctamente:
 http://localhost:7080/app
+
 http://localhost:7080/app/signin
+
 http://localhost:7080/app/signup
+
 http://localhost:7080/app/dashboard
+
 http://localhost:7080/app/logout
+
 http://localhost:7080/app/placeOrder
+
 
