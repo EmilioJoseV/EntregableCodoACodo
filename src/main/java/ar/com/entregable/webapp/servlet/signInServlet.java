@@ -20,7 +20,7 @@ public class signInServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=UTF-8");
-        resp.sendRedirect(req.getContextPath() + "/pages/signIn.html");
+        resp.sendRedirect(req.getContextPath() + "/pages/signin.html");
     }
 
     @Override
