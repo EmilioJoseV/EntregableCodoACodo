@@ -30,12 +30,14 @@ public class signInServlet extends HttpServlet {
         loginDto.setUsername(req.getParameter("username"));
         loginDto.setPassword(req.getParameter("password"));
         loginDto.setKeepSession(Boolean.parseBoolean(req.getParameter("keepSession")));
+
         UserService service = new UserServiceImpl();
+
         try {
 
             if (service.login(loginDto)) {
                 //User succesfully logged in.
-
+                getServletContext().getRequestDispatcher("/index.html").forward(req,resp);
             }
         } catch (SQLException e) {
             //In case of DataBase error
