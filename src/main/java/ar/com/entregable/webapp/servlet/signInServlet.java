@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
-@WebServlet(name = "signIn", urlPatterns = {"/signIn","/login"})
+@WebServlet(name = "signIn", urlPatterns = {"/signin","/login"})
 public class signInServlet extends HttpServlet {
 
     @Override
@@ -29,12 +29,13 @@ public class signInServlet extends HttpServlet {
         LoginDTO loginDto =  new LoginDTO();
         loginDto.setUsername(req.getParameter("username"));
         loginDto.setPassword(req.getParameter("password"));
-        loginDto.setPassword(req.getParameter("keepSession"));
+        loginDto.setKeepSession(Boolean.parseBoolean(req.getParameter("keepSession")));
         UserService service = new UserServiceImpl();
         try {
+
             if (service.login(loginDto)) {
                 //User succesfully logged in.
-                resp.sendRedirect("logueado");
+
             }
         } catch (SQLException e) {
             //In case of DataBase error
@@ -44,10 +45,14 @@ public class signInServlet extends HttpServlet {
 
         } catch (UsernameNotFoundException e) {
             //In case of Username not found
-            resp.sendRedirect(e.getMessage());
+            try (PrintWriter out = resp.getWriter()) {
+                out.println(e.getMessage());
+            }
         } catch (IncorrectPasswordException e) {
             //In case of Incorrect password
-            resp.sendRedirect(e.getMessage());
+            try (PrintWriter out = resp.getWriter()) {
+                out.println(e.getMessage());
+            }
         }
 
 

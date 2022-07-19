@@ -16,7 +16,7 @@ public class DataBaseConnection {
         if (pool == null )
         {
             pool = new BasicDataSource();
-            pool.setDriverClassName("com.mysql.jdbc.Driver");
+            pool.setDriverClassName("com.mysql.cj.jdbc.Driver");
             pool.setUrl(url);
             pool.setUsername(username);
             pool.setPassword(password);
