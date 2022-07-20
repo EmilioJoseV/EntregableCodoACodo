@@ -8,15 +8,15 @@ List<String> errors = (List<String>)request.getAttribute("errors");
     <title>App - Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-    <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/signInStyles.css">
+    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/images/favicon.ico">
+    <link href="${pageContext.request.contextPath}/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signInStyles.css">
 </head>
 
 <body class="text-center">
 <div class="form-signin bg-light">
     <form action="/app/signin" method="post">
-        <img class="mb-4" src="../images/android-chrome-512x512.png" alt="company-logo" width="72">
+        <img class="mb-4" src="${pageContext.request.contextPath}/images/android-chrome-512x512.png" alt="company-logo" width="72">
         <h1 class="h3 mb-3 fw-normal">Login</h1>
 
         <div class="form-floating">
@@ -53,7 +53,7 @@ if(errors != null && errors.size() > 0){
 
 
 <!-- Bootstrap JS -->
-<script src="../js/boostrap/bootstrap.bundle.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/boostrap/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
