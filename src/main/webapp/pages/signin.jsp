@@ -1,3 +1,9 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%
+List<String> errors = (List<String>)request.getAttribute("errors");
+%>
+
 <head>
     <title>App - Login</title>
     <meta charset="utf-8">
@@ -27,6 +33,15 @@
                 <input type="checkbox" value="true" name="keepSession"> Remember me
             </label>
         </div>
+
+<%
+if(errors != null && errors.size() > 0){
+%>
+<ul>
+<% for(String error: errors){%>
+<li><%=error%></li>
+</ul>
+<%} }%>
 
         <a class="py-2 d-none d-md-inline-block" href="/passwordRecovery">Forgot your password?</a>
         <a class="py-2 d-none d-md-inline-block" href="/signUp">I don't have an account</a>
