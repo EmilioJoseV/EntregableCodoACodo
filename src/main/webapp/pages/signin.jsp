@@ -1,7 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
 <%
-List<String> errors = (List<String>)request.getAttribute("errors");
+List<String> errors = (List<String>) request.getAttribute("errors");
+Exception errorResponse = (Exception) request.getAttribute("errorResponse");
 %>
 
 <head>
@@ -37,11 +38,25 @@ List<String> errors = (List<String>)request.getAttribute("errors");
 <%
 if(errors != null && errors.size() > 0){
 %>
-<ul>
 <% for(String error: errors){%>
-<li><%=error%></li>
-</ul>
+<div class="alert alert-danger d-flex align-items-center" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+  <div>
+      <%=error%>
+  </div>
+</div>
 <%} }%>
+
+<%
+if(errorResponse != null){
+%>
+<div class="alert alert-danger d-flex align-items-center" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+  <div>
+      <%=errorResponse.getMessage()%>
+  </div>
+</div>
+<%}%>
 
         <a class="py-2 d-none d-md-inline-block" href="/passwordRecovery">Forgot your password?</a>
         <a class="py-2 d-none d-md-inline-block" href="/signUp">I don't have an account</a>
@@ -50,7 +65,6 @@ if(errors != null && errors.size() > 0){
         <p class="mt-5 mb-3 text-muted">&copy; 2022–2023</p>
     </form>
 </div>
-
 
 <!-- Bootstrap JS -->
 <script src="${pageContext.request.contextPath}/js/boostrap/bootstrap.bundle.min.js"></script>

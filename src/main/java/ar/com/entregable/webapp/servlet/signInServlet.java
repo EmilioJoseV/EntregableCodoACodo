@@ -20,7 +20,7 @@ import java.util.List;
 public class signInServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("text/html;charset=UTF-8");
         resp.sendRedirect(req.getContextPath() + "/pages/signin.jsp");
     }
@@ -52,17 +52,9 @@ public class signInServlet extends HttpServlet {
             try (PrintWriter out = resp.getWriter()) {
                 out.println(e.getMessage());
             }
-
-        } catch (UsernameNotFoundException e) {
-            try (PrintWriter out = resp.getWriter()) {
-                out.println(e.getMessage());
-            }
-        } catch (IncorrectPasswordException e) {
-            try (PrintWriter out = resp.getWriter()) {
-                out.println(e.getMessage());
-            }
+        } catch (UsernameNotFoundException | IncorrectPasswordException e) {
+            req.setAttribute("errorResponse",e);
+            getServletContext().getRequestDispatcher("/pages/signin.jsp").forward(req,resp);
         }
-
-
     }
 }
